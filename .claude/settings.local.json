@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(npm run build:*)",
+      "Bash(ln:*)",
+      "Bash(for lib in libicudata libicui18n libicuio libicuuc)",
+      "Bash(do ln -sf $lib.76.dylib $lib.74.dylib)",
+      "Bash(done)",
+      "Bash(brew reinstall:*)",
+      "Bash(node --version)",
+      "Bash(npm --version:*)",
+      "Bash(/opt/homebrew/bin/node:*)",
+      "Bash(nvm --version:*)",
+      "Bash(nvm ls:*)",
+      "Bash(nvm install:*)",
+      "Bash(nvm use:*)",
+      "Bash(export PATH=\"/opt/homebrew/bin:$PATH\")",
+      "Bash(brew list:*)",
+      "Bash(brew unlink:*)",
+      "Bash(brew link:*)",
+      "Bash(hash -r)",
+      "Bash(brew info:*)",
+      "Bash(brew upgrade:*)",
+      "Bash(curl:*)",
+      "Bash(grep:*)",
+      "Bash(cat:*)",
+      "Bash(node -e:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nfix: update image paths to use BASE_URL for GitHub Pages deployment\n\n- Updated Hero, EventsSection, and ShopSection to use import.meta.env.BASE_URL\n- Updated favicon path in index.html\n- Rebuilt dist folder with correct image paths\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push:*)",
+      "Bash(ls:*)"
+    ]
+  }
+}

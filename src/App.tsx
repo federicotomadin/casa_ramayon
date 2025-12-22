@@ -1,9 +1,9 @@
-import { Header } from "./components/layout/Header"
+import { Header } from "./components/layout/Header.tsx"
 import { Hero } from "./components/sections/Hero"
 import { EventsSection } from "./components/sections/EventsSection"
 import { BookingSection } from "./components/sections/BookingSection"
 import { ShopSection } from "./components/sections/ShopSection"
-import { Footer } from "./components/layout/Footer"
+import { Footer } from "./components/layout/Footer.tsx"
 
 function App() {
   return (
