@@ -1,13 +1,13 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 
-export function Hero() {
+export const Hero = () => {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center pt-20">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/casa_ramayon.png"
+          src={`${import.meta.env.BASE_URL}casa_ramayon.png`}
           alt="Galería de arte cultural"
           className="w-full h-full object-cover opacity-70"
         />

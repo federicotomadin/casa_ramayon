@@ -1,50 +1,50 @@
-"use client"
-
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { ShoppingCart } from "lucide-react"
+
+const BASE_URL = import.meta.env.BASE_URL
 
 const products = [
   {
     id: 1,
     name: "Set Profesional de Acrílicos",
     price: "$89.99",
-    image: "/professional-acrylic-paint-set.jpg",
+    image: `${BASE_URL}professional-acrylic-paint-set.jpg`,
     category: "Pintura",
   },
   {
     id: 2,
     name: "Colección Premium de Pinceles",
     price: "$54.99",
-    image: "/premium-artist-paint-brushes.jpg",
+    image: `${BASE_URL}premium-artist-paint-brushes.jpg`,
     category: "Herramientas",
   },
   {
     id: 3,
     name: "Pack Inicial de Lienzos",
     price: "$39.99",
-    image: "/blank-art-canvas-set.jpg",
+    image: `${BASE_URL}blank-art-canvas-set.jpg`,
     category: "Lienzo",
   },
   {
     id: 4,
     name: "Set Maestro de Acuarelas",
     price: "$124.99",
-    image: "/watercolor-paint-set.jpg",
+    image: `${BASE_URL}watercolor-paint-set.jpg`,
     category: "Pintura",
   },
   {
     id: 5,
     name: "Kit de Lápices para Dibujo",
     price: "$29.99",
-    image: "/professional-sketching-pencils.jpg",
+    image: `${BASE_URL}professional-sketching-pencils.jpg`,
     category: "Herramientas",
   },
   {
     id: 6,
     name: "Colección de Óleo",
     price: "$149.99",
-    image: "/oil-paint-tubes-set.jpg",
+    image: `${BASE_URL}oil-paint-tubes-set.jpg`,
     category: "Pintura",
   },
 ]
@@ -71,7 +71,7 @@ export function ShopSection() {
             <Card key={product.id} className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="relative aspect-square overflow-hidden bg-muted">
                 <img
-                  src={product.image || "/placeholder.svg"}
+                  src={product.image || `${BASE_URL}placeholder.svg`}
                   alt={product.name}
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                 />

@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Calendar, MapPin, Ticket } from "lucide-react"
 
+const BASE_URL = import.meta.env.BASE_URL
+
 const events = [
   {
     id: 1,
@@ -9,7 +11,7 @@ const events = [
     date: "15 de Marzo, 2025",
     location: "Gran Galería",
     price: "$25",
-    image: "/contemporary-art-exhibition.png",
+    image: `${BASE_URL}contemporary-art-exhibition.png`,
     category: "Exposición",
   },
   {
@@ -18,7 +20,7 @@ const events = [
     date: "22 de Marzo, 2025",
     location: "Sala Sinfónica",
     price: "$45",
-    image: "/classical-concert-hall.png",
+    image: `${BASE_URL}classical-concert-hall.png`,
     category: "Espectáculo",
   },
   {
@@ -27,7 +29,7 @@ const events = [
     date: "28 de Marzo, 2025",
     location: "Estudio Creativo",
     price: "$35",
-    image: "/modern-dance-performance.jpg",
+    image: `${BASE_URL}modern-dance-performance.jpg`,
     category: "Taller",
   },
 ]
@@ -50,7 +52,7 @@ export function EventsSection() {
             <Card key={event.id} className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="relative h-64 overflow-hidden">
                 <img
-                  src={event.image || "/placeholder.svg"}
+                  src={event.image || `${BASE_URL}placeholder.svg`}
                   alt={event.title}
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                 />
