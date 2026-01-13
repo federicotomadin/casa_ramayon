@@ -29,7 +29,8 @@
       "Bash(git add:*)",
       "Bash(git commit -m \"$(cat <<''EOF''\nfix: update image paths to use BASE_URL for GitHub Pages deployment\n\n- Updated Hero, EventsSection, and ShopSection to use import.meta.env.BASE_URL\n- Updated favicon path in index.html\n- Rebuilt dist folder with correct image paths\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n)\")",
       "Bash(git push:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(npm run deploy:*)"
     ]
   }
 }
