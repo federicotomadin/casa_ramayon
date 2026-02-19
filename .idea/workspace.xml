@@ -4,22 +4,41 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8fab57c7-5382-4387-bd17-469c1f2254ce" name="Changes" comment="refactor: remove 'use client' directives and clean up imports across components">
-      <change beforePath="$PROJECT_DIR$/.claude/settings.local.json" beforeDir="false" afterPath="$PROJECT_DIR$/.claude/settings.local.json" afterDir="false" />
+    <list default="true" id="8fab57c7-5382-4387-bd17-469c1f2254ce" name="Changes" comment="update favicon link from SVG to PNG format">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/index-CVx_NJ5V.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/icon-dark-32x32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/icon-light-32x32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/dist/icon.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/placeholder-user.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.mjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/theme-provider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/theme-provider.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/icon-dark-32x32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/icon-light-32x32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/icon.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/placeholder-user.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/EventsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/EventsSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/ShopSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/ShopSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_/Users/federicotomadin/Projects/Personals/casa_ramayon" value="377qXzd2JKjVt2qEKJjYCFZ5FgA" />
+    </persistenceIdMap>
+  </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="109" />
+    <option name="cachedIndexableFilesCount" value="131" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
@@ -102,7 +121,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.29346.242" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.30387.83" />
       </set>
     </attachedChunks>
   </component>
@@ -117,7 +136,13 @@
       <workItem from="1766352962172" duration="439000" />
       <workItem from="1766353812418" duration="9977000" />
       <workItem from="1766579034209" duration="826000" />
-      <workItem from="1768273124794" duration="667000" />
+      <workItem from="1768273124794" duration="1397000" />
+      <workItem from="1769958435346" duration="2320000" />
+      <workItem from="1769963084298" duration="4570000" />
+      <workItem from="1770151324207" duration="2253000" />
+      <workItem from="1771377716403" duration="53000" />
+      <workItem from="1771432841863" duration="2727000" />
+      <workItem from="1771440351775" duration="502000" />
     </task>
     <task id="LOCAL-00001" summary="initialize project structure with essential components and configurations">
       <option name="closed" value="true" />
@@ -135,7 +160,23 @@
       <option name="project" value="LOCAL" />
       <updated>1766371776082</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fix: update asset paths for deployment and clean up unused code">
+      <option name="closed" value="true" />
+      <created>1768273875912</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1768273875912</updated>
+    </task>
+    <task id="LOCAL-00004" summary="update favicon link from SVG to PNG format">
+      <option name="closed" value="true" />
+      <created>1769959860466</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1769959860467</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,7 +184,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initialize project structure with essential components and configurations" />
-    <option name="LAST_COMMIT_MESSAGE" value="initialize project structure with essential components and configurations" />
+    <MESSAGE value="fix: update asset paths for deployment and clean up unused code" />
+    <MESSAGE value="update favicon link from SVG to PNG format" />
+    <option name="LAST_COMMIT_MESSAGE" value="update favicon link from SVG to PNG format" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

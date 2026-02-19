@@ -43,6 +43,7 @@
     "cmdk": "1.0.4",
     "date-fns": "4.1.0",
     "embla-carousel-react": "8.5.1",
+    "firebase": "^12.9.0",
     "input-otp": "1.4.1",
     "jiti": "latest",
     "less": "latest",
@@ -54,6 +55,7 @@
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.60.0",
     "react-resizable-panels": "^2.1.7",
+    "react-router-dom": "^7.13.0",
     "recharts": "2.15.4",
     "sass": "latest",
     "sass-embedded": "latest",
@@ -80,10 +82,10 @@
     "eslint": "^9.15.0",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.14",
+    "gh-pages": "^6.1.1",
     "postcss": "^8.5",
     "tailwindcss": "^4.1.9",
     "typescript": "^5.6.3",
-    "vite": "^6.0.1",
-    "gh-pages": "^6.1.1"
+    "vite": "^6.0.1"
   }
 }
