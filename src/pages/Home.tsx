@@ -1,5 +1,7 @@
 import { Header } from "@/components/layout/Header"
 import { Hero } from "@/components/sections/Hero"
+import { HistoriaSection } from "@/components/sections/HistoriaSection"
+import { EspacioSection } from "@/components/sections/EspacioSection"
 import { EventsSection } from "@/components/sections/EventsSection"
 import { BookingSection } from "@/components/sections/BookingSection"
 import { ShopSection } from "@/components/sections/ShopSection"
@@ -14,6 +16,8 @@ export function Home() {
       <Header />
       <main>
         <Hero />
+        <HistoriaSection />
+        <EspacioSection />
         <EventsSection />
         <BookingSection />
         <ShopSection />

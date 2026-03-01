@@ -4,7 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8fab57c7-5382-4387-bd17-469c1f2254ce" name="Changes" comment="update favicon link from SVG to PNG format" />
+    <list default="true" id="8fab57c7-5382-4387-bd17-469c1f2254ce" name="Changes" comment="update favicon link from SVG to PNG format">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CartSheet.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CartSheet.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/AmigoSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/AmigoSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/ContactSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/ContactSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/contexts/DataContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/contexts/DataContext.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/Dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/Dashboard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/Events.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/Events.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/GuidedTours.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/GuidedTours.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/Layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/Layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/Memberships.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/Memberships.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/Pages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/Pages.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/Products.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/Products.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/Settings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/Settings.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/Sponsors.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/Sponsors.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/Subscribers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/Subscribers.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/TeamMembers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/TeamMembers.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/Workshops.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/Workshops.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

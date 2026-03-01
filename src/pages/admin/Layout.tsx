@@ -3,13 +3,23 @@ import { Link, Outlet, useLocation, useNavigate } from "react-router-dom"
 import { useAuth } from "@/contexts/AuthContext"
 import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
-import { LayoutDashboard, Calendar, ShoppingBag, Settings, LogOut, Menu, X, Home } from "lucide-react"
+import {
+  LayoutDashboard, Calendar, ShoppingBag, Settings, LogOut, Menu, X, Home,
+  BookOpen, Map, Heart, Handshake, Users, FileText, Mail,
+} from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const navigation = [
-  { name: "Dashboard", href: "/panel", icon: LayoutDashboard },
+  { name: "Dashboard", href: "/panel", icon: LayoutDashboard, exact: true },
   { name: "Eventos", href: "/panel/eventos", icon: Calendar },
   { name: "Productos", href: "/panel/productos", icon: ShoppingBag },
+  { name: "Talleres", href: "/panel/talleres", icon: BookOpen },
+  { name: "Visitas Guiadas", href: "/panel/visitas", icon: Map },
+  { name: "Membresías", href: "/panel/membresias", icon: Heart },
+  { name: "Patrocinadores", href: "/panel/patrocinadores", icon: Handshake },
+  { name: "Equipo", href: "/panel/equipo", icon: Users },
+  { name: "Páginas", href: "/panel/paginas", icon: FileText },
+  { name: "Suscriptores", href: "/panel/suscriptores", icon: Mail },
   { name: "Configuración", href: "/panel/configuracion", icon: Settings },
 ]
 
@@ -40,10 +50,12 @@ export function AdminLayout() {
           <ScrollArea className="flex-1 py-4">
             <nav className="px-2 space-y-1">
               {navigation.map((item) => {
-                const isActive = item.href === "/panel" ? location.pathname === "/panel" : location.pathname.startsWith(item.href)
+                const isActive = item.exact
+                  ? location.pathname === item.href
+                  : location.pathname.startsWith(item.href)
                 return (
                   <Link key={item.name} to={item.href} onClick={() => setSidebarOpen(false)} className={cn("flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium", isActive ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-muted")}>
-                    <item.icon className="h-5 w-5" />
+                    <item.icon className="h-5 w-5 shrink-0" />
                     {item.name}
                   </Link>
                 )
@@ -63,7 +75,7 @@ export function AdminLayout() {
       <div className="lg:pl-64">
         <header className="sticky top-0 z-30 h-16 bg-background/95 backdrop-blur border-b flex items-center px-4 lg:px-8">
           <Button variant="ghost" size="icon" className="lg:hidden mr-2" onClick={() => setSidebarOpen(true)}><Menu className="h-5 w-5" /></Button>
-          <h1 className="text-lg font-semibold">Panel</h1>
+          <h1 className="text-lg font-semibold">Panel de Administración</h1>
         </header>
         <main className="p-4 lg:p-8"><Outlet /></main>
       </div>

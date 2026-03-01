@@ -134,7 +134,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
   const [faqs, setFaqs] = useState<Faq[]>([])
   const [subscribers, setSubscribers] = useState<Subscriber[]>([])
   const [loading, setLoading] = useState(true)
-  const [useLocalStorage, setUseLocalStorage] = useState(!isFirebaseConfigured())
+  const [useLocalStorage] = useState(!isFirebaseConfigured())
 
   useEffect(() => {
     if (useLocalStorage) {
@@ -153,7 +153,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
       const unsubscribers: (() => void)[] = []
       const subscribeToCollection = <T,>(
         collectionName: string,
-        storageKey: string,
+        _storageKey: string,
         setter: React.Dispatch<React.SetStateAction<T[]>>,
         defaultData: T[]
       ) =>
@@ -169,9 +169,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
             setter(data)
           },
           (err) => {
-            console.error(`Error ${collectionName}:`, err)
-            setUseLocalStorage(true)
-            setter(loadFromLocalStorage(storageKey, defaultData))
+            console.warn(`Firestore: ${collectionName} not accessible, using empty default.`, err.message)
+            setter(defaultData)
           }
         )
       unsubscribers.push(subscribeToCollection("events", STORAGE_KEYS.events, setEvents, defaultEvents))

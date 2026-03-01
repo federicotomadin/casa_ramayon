@@ -17,6 +17,34 @@ export function CartSheet({ open, onOpenChange }: CartSheetProps) {
   const { items, removeFromCart, updateQuantity, itemCount, totalFormatted } = useCart()
   const [checkoutLoading, setCheckoutLoading] = useState(false)
 
+  const handleCheckout = async () => {
+    setCheckoutLoading(true)
+    try {
+      const createCheckout = getCallable<
+        {
+          items: { productId: string; name: string; price: string; image?: string; quantity: number }[]
+          siteUrl?: string
+        },
+        { initPoint: string }
+      >("createMpCheckout")
+      const { data } = await createCheckout({
+        items: items.map(({ product, quantity }) => ({
+          productId: product.id,
+          name: product.name,
+          price: product.price,
+          image: product.image || undefined,
+          quantity,
+        })),
+        siteUrl: SITE_URL,
+      })
+      if (data?.initPoint) window.location.href = data.initPoint
+    } catch (err) {
+      console.error("Checkout error:", err)
+      alert((err as Error)?.message || "Error al iniciar el pago.")
+      setCheckoutLoading(false)
+    }
+  }
+
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent side="right" className="flex flex-col w-full sm:max-w-md">
@@ -94,33 +122,7 @@ export function CartSheet({ open, onOpenChange }: CartSheetProps) {
             <Button
               className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
               disabled={checkoutLoading}
-              onClick={async () => {
-                setCheckoutLoading(true)
-                try {
-                  const createCheckout = getCallable<
-                    {
-                      items: { productId: string; name: string; price: string; image?: string; quantity: number }[]
-                      siteUrl?: string
-                    },
-                    { initPoint: string }
-                  >("createMpCheckout")
-                  const { data } = await createCheckout({
-                    items: items.map(({ product, quantity }) => ({
-                      productId: product.id,
-                      name: product.name,
-                      price: product.price,
-                      image: product.image || undefined,
-                      quantity,
-                    })),
-                    siteUrl: SITE_URL,
-                  })
-                  if (data?.initPoint) window.location.href = data.initPoint
-                } catch (err) {
-                  console.error("Checkout error:", err)
-                  alert((err as Error)?.message || "Error al iniciar el pago.")
-                  setCheckoutLoading(false)
-                }
-              }}
+              onClick={handleCheckout}
             >
               {checkoutLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
               Pagar con Mercado Pago

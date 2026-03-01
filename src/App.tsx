@@ -47,7 +47,7 @@ function App() {
               <Route path="productos" element={<AdminProducts />} />
               <Route path="equipo" element={<AdminTeamMembers />} />
               <Route path="membresias" element={<AdminMemberships />} />
-              <Route path="sponsors" element={<AdminSponsors />} />
+              <Route path="patrocinadores" element={<AdminSponsors />} />
               <Route path="paginas" element={<AdminPages />} />
               <Route path="suscriptores" element={<AdminSubscribers />} />
               <Route path="configuracion" element={<AdminSettings />} />
