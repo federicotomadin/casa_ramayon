@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8fab57c7-5382-4387-bd17-469c1f2254ce" name="Changes" comment="add: event ticketing, QR codes, and improved login return functionality&#10;&#10;- Integrated Mercado Pago for event ticket purchases.&#10;- Added QR code generation and email delivery for tickets.&#10;- Implemented conditional redirect upon login based on return location.&#10;- Enhanced admin section with ticket validation and new reusable components.&#10;- Updated dependencies and types to support new features." />
+    <list default="true" id="8fab57c7-5382-4387-bd17-469c1f2254ce" name="Changes" comment="refactor: replace GitHub Pages SPA redirect script with session-based handling&#10;&#10;- Removed outdated SPA redirect script from `index.html` and `404.html`.  &#10;- Implemented session-based redirect handler in `App.tsx` using `useNavigate`.  &#10;- Updated Firestore rules to include new `/entradas` and `/usuarios` collections.  &#10;- Minor cleanup in asset references and `.idea` configurations." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -125,6 +125,7 @@
       <workItem from="1772470605724" duration="19000" />
       <workItem from="1772487274019" duration="1413000" />
       <workItem from="1772638357285" duration="47000" />
+      <workItem from="1772647443139" duration="36000" />
     </task>
     <task id="LOCAL-00001" summary="initialize project structure with essential components and configurations">
       <option name="closed" value="true" />
@@ -174,7 +175,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772638392553</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="refactor: replace GitHub Pages SPA redirect script with session-based handling&#10;&#10;- Removed outdated SPA redirect script from `index.html` and `404.html`.  &#10;- Implemented session-based redirect handler in `App.tsx` using `useNavigate`.  &#10;- Updated Firestore rules to include new `/entradas` and `/usuarios` collections.  &#10;- Minor cleanup in asset references and `.idea` configurations.">
+      <option name="closed" value="true" />
+      <created>1772647462324</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1772647462324</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,7 +195,8 @@
     <MESSAGE value="update favicon link from SVG to PNG format" />
     <MESSAGE value="add: implement Firebase integration, sections, and Mercado Pago checkout functionality&#10;&#10;- Added Firebase configurations and Firestore security rules.&#10;- Created HistoriaSection and EspacioSection components for static pages.&#10;- Implemented a serverless function to create Mercado Pago checkout preferences.&#10;- Added reusable types for events, products, pages, and more.&#10;- Set up TypeScript and Firebase Node.js functions environment.&#10;- Configured Firebase hosting and Firestore rules." />
     <MESSAGE value="add: event ticketing, QR codes, and improved login return functionality&#10;&#10;- Integrated Mercado Pago for event ticket purchases.&#10;- Added QR code generation and email delivery for tickets.&#10;- Implemented conditional redirect upon login based on return location.&#10;- Enhanced admin section with ticket validation and new reusable components.&#10;- Updated dependencies and types to support new features." />
-    <option name="LAST_COMMIT_MESSAGE" value="add: event ticketing, QR codes, and improved login return functionality&#10;&#10;- Integrated Mercado Pago for event ticket purchases.&#10;- Added QR code generation and email delivery for tickets.&#10;- Implemented conditional redirect upon login based on return location.&#10;- Enhanced admin section with ticket validation and new reusable components.&#10;- Updated dependencies and types to support new features." />
+    <MESSAGE value="refactor: replace GitHub Pages SPA redirect script with session-based handling&#10;&#10;- Removed outdated SPA redirect script from `index.html` and `404.html`.  &#10;- Implemented session-based redirect handler in `App.tsx` using `useNavigate`.  &#10;- Updated Firestore rules to include new `/entradas` and `/usuarios` collections.  &#10;- Minor cleanup in asset references and `.idea` configurations." />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: replace GitHub Pages SPA redirect script with session-based handling&#10;&#10;- Removed outdated SPA redirect script from `index.html` and `404.html`.  &#10;- Implemented session-based redirect handler in `App.tsx` using `useNavigate`.  &#10;- Updated Firestore rules to include new `/entradas` and `/usuarios` collections.  &#10;- Minor cleanup in asset references and `.idea` configurations." />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
