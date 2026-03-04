@@ -139,6 +139,19 @@ export interface Faq {
   updatedAt: Date
 }
 
+// Ticket (Entrada) types
+export interface Entrada {
+  id: string
+  email: string
+  nombre?: string
+  eventoId: string
+  eventoTitle: string
+  estado: "pending" | "complete"
+  qrToken: string
+  fechaCompra: Date
+  fechaIngreso: Date | null
+}
+
 // Form types for creating/editing
 export type EventFormData = Omit<Event, "id" | "createdAt" | "updatedAt">
 export type ProductFormData = Omit<Product, "id" | "createdAt" | "updatedAt">

@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
+import { Toaster } from "sonner"
 import { AuthProvider } from "@/contexts/AuthContext"
 import { CartProvider } from "@/contexts/CartContext"
 import { DataProvider } from "@/contexts/DataContext"
@@ -18,6 +19,7 @@ import {
   AdminPages,
   AdminSubscribers,
   AdminSettings,
+  AdminValidateEntry,
 } from "@/pages/admin"
 
 function App() {
@@ -51,11 +53,13 @@ function App() {
               <Route path="paginas" element={<AdminPages />} />
               <Route path="suscriptores" element={<AdminSubscribers />} />
               <Route path="configuracion" element={<AdminSettings />} />
+              <Route path="validar-entrada" element={<AdminValidateEntry />} />
             </Route>
 
             {/* Redirect unknown routes */}
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
+          <Toaster richColors position="top-center" />
           </CartProvider>
         </DataProvider>
       </AuthProvider>

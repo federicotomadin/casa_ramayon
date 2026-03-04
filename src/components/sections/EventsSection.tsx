@@ -1,12 +1,17 @@
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Calendar, MapPin, Ticket } from "lucide-react"
 import { useData } from "@/contexts/DataContext"
+import { EventRegistrationModal } from "@/components/EventRegistrationModal"
+import type { Event } from "@/types"
 
 const BASE_URL = import.meta.env.BASE_URL
 
 export function EventsSection() {
   const { events, loading } = useData()
+  const [selectedEvent, setSelectedEvent] = useState<Event | null>(null)
+  const [modalOpen, setModalOpen] = useState(false)
 
   // Filter only active events
   const activeEvents = events.filter((event) => event.isActive)
@@ -74,7 +79,13 @@ export function EventsSection() {
                       <span className="text-sm font-mono">{event.price}</span>
                     </div>
                   </div>
-                  <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+                  <Button
+                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
+                    onClick={() => {
+                      setSelectedEvent(event)
+                      setModalOpen(true)
+                    }}
+                  >
                     Reservar Entradas
                   </Button>
                 </CardContent>
@@ -91,6 +102,12 @@ export function EventsSection() {
           </div>
         )}
       </div>
+
+      <EventRegistrationModal
+        event={selectedEvent}
+        open={modalOpen}
+        onOpenChange={setModalOpen}
+      />
     </section>
   )
 }

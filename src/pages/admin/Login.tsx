@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useLocation } from "react-router-dom"
 import { useAuth } from "@/contexts/AuthContext"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -16,6 +16,8 @@ export function AdminLogin() {
   const [useDemoMode, setUseDemoMode] = useState(false)
   const { signIn } = useAuth()
   const navigate = useNavigate()
+  const location = useLocation()
+  const returnTo = (location.state as { from?: { pathname: string } })?.from?.pathname || "/panel"
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -23,7 +25,7 @@ export function AdminLogin() {
     setLoading(true)
     try {
       await signIn(email, password)
-      navigate("/panel")
+      navigate(returnTo)
     } catch (err: unknown) {
       const code = (err as { code?: string })?.code
       setError(code === "auth/invalid-credential" ? "Credenciales inválidas" : "Error al iniciar sesión.")
@@ -34,7 +36,7 @@ export function AdminLogin() {
 
   const handleDemoAccess = () => {
     localStorage.setItem("casa_ramayon_demo_auth", "true")
-    navigate("/panel")
+    navigate(returnTo)
   }
 
   return (
