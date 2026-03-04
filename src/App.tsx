@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
+import { useEffect, useState } from "react"
+import { BrowserRouter, Routes, Route, Navigate, useNavigate } from "react-router-dom"
 import { Toaster } from "sonner"
 import { AuthProvider } from "@/contexts/AuthContext"
 import { CartProvider } from "@/contexts/CartContext"
@@ -22,9 +23,27 @@ import {
   AdminValidateEntry,
 } from "@/pages/admin"
 
+function SpaRedirectHandler({ children }: { children: React.ReactNode }) {
+  const navigate = useNavigate()
+  const [ready, setReady] = useState(false)
+
+  useEffect(() => {
+    const redirect = sessionStorage.getItem("spa_redirect")
+    if (redirect) {
+      sessionStorage.removeItem("spa_redirect")
+      navigate(redirect, { replace: true })
+    }
+    setReady(true)
+  }, [navigate])
+
+  if (!ready) return null
+  return <>{children}</>
+}
+
 function App() {
   return (
     <BrowserRouter>
+      <SpaRedirectHandler>
       <AuthProvider>
         <DataProvider>
           <CartProvider>
@@ -63,6 +82,7 @@ function App() {
           </CartProvider>
         </DataProvider>
       </AuthProvider>
+      </SpaRedirectHandler>
     </BrowserRouter>
   )
 }
