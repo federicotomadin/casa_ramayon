@@ -1,16 +1,20 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
+import { useData } from "@/contexts/DataContext"
 
 export const Hero = () => {
+  const { siteSettings } = useData()
+  const heroBg =
+    siteSettings?.heroBackgroundUrl || `${import.meta.env.BASE_URL}casa_ramayon.png`
+
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center pt-20">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src={`${import.meta.env.BASE_URL}casa_ramayon.png`}
+          src={heroBg}
           alt="Galería de arte cultural"
           className="w-full h-full object-cover opacity-70"
-          
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/80 to-background" />
       </div>

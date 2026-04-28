@@ -6,6 +6,7 @@ import {
   deleteDoc,
   doc,
   onSnapshot,
+  setDoc,
   Timestamp,
 } from "firebase/firestore"
 import { db } from "@/lib/firebase"
@@ -21,6 +22,7 @@ import {
   PageContent,
   Subscriber,
   Faq,
+  SiteSettings,
   EventFormData,
   ProductFormData,
   WorkshopFormData,
@@ -42,6 +44,7 @@ const defaultFaqs: Faq[] = []
 const defaultSubscribers: Subscriber[] = []
 const defaultTeamMembers: TeamMember[] = []
 const defaultPages: PageContent[] = []
+const defaultSiteSettings: SiteSettings = {}
 
 interface DataContextType {
   events: Event[]
@@ -54,6 +57,7 @@ interface DataContextType {
   pages: PageContent[]
   faqs: Faq[]
   subscribers: Subscriber[]
+  siteSettings: SiteSettings
   loading: boolean
   useLocalStorage: boolean
 
@@ -81,6 +85,7 @@ interface DataContextType {
   updateTeamMember: (id: string, data: Partial<TeamMemberFormData>) => Promise<void>
   deleteTeamMember: (id: string) => Promise<void>
   updatePage: (slug: string, data: Partial<PageContentFormData>) => Promise<void>
+  updateSiteSettings: (data: Partial<SiteSettings>) => Promise<void>
   addFaq: (data: FaqFormData) => Promise<void>
   updateFaq: (id: string, data: Partial<FaqFormData>) => Promise<void>
   deleteFaq: (id: string) => Promise<void>
@@ -106,6 +111,21 @@ const STORAGE_KEYS = {
   pages: "casa_ramayon_pages",
   faqs: "casa_ramayon_faqs",
   subscribers: "casa_ramayon_subscribers",
+  siteSettings: "casa_ramayon_site_settings",
+}
+
+const loadObjectFromLocalStorage = <T,>(key: string, defaultValue: T): T => {
+  try {
+    const stored = localStorage.getItem(key)
+    if (stored) return JSON.parse(stored)
+  } catch {}
+  return defaultValue
+}
+
+const saveObjectToLocalStorage = <T,>(key: string, data: T) => {
+  try {
+    localStorage.setItem(key, JSON.stringify(data))
+  } catch {}
 }
 
 const loadFromLocalStorage = <T,>(key: string, defaultValue: T[]): T[] => {
@@ -133,6 +153,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
   const [pages, setPages] = useState<PageContent[]>([])
   const [faqs, setFaqs] = useState<Faq[]>([])
   const [subscribers, setSubscribers] = useState<Subscriber[]>([])
+  const [siteSettings, setSiteSettings] = useState<SiteSettings>(defaultSiteSettings)
   const [loading, setLoading] = useState(true)
   const [useLocalStorage] = useState(!isFirebaseConfigured())
 
@@ -148,6 +169,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
       setPages(loadFromLocalStorage(STORAGE_KEYS.pages, defaultPages))
       setFaqs(loadFromLocalStorage(STORAGE_KEYS.faqs, defaultFaqs))
       setSubscribers(loadFromLocalStorage(STORAGE_KEYS.subscribers, defaultSubscribers))
+      setSiteSettings(loadObjectFromLocalStorage(STORAGE_KEYS.siteSettings, defaultSiteSettings))
       setLoading(false)
     } else {
       const unsubscribers: (() => void)[] = []
@@ -183,6 +205,23 @@ export function DataProvider({ children }: { children: ReactNode }) {
       unsubscribers.push(subscribeToCollection("pages", STORAGE_KEYS.pages, setPages, defaultPages))
       unsubscribers.push(subscribeToCollection("faqs", STORAGE_KEYS.faqs, setFaqs, defaultFaqs))
       unsubscribers.push(subscribeToCollection("subscribers", STORAGE_KEYS.subscribers, setSubscribers, defaultSubscribers))
+
+      const siteSettingsUnsub = onSnapshot(
+        doc(db, "settings", "site"),
+        (snap) => {
+          const data = snap.data() as SiteSettings | undefined
+          setSiteSettings({
+            ...(data || {}),
+            updatedAt: (data as any)?.updatedAt?.toDate?.() || undefined,
+          })
+        },
+        (err) => {
+          console.warn("Firestore: settings/site not accessible, using defaults.", err.message)
+          setSiteSettings(defaultSiteSettings)
+        }
+      )
+      unsubscribers.push(siteSettingsUnsub)
+
       setTimeout(() => setLoading(false), 2000)
       return () => unsubscribers.forEach((u) => u())
     }
@@ -299,6 +338,20 @@ export function DataProvider({ children }: { children: ReactNode }) {
     }
   }
 
+  const updateSiteSettings = async (data: Partial<SiteSettings>) => {
+    const next: SiteSettings = { ...siteSettings, ...data, updatedAt: new Date() }
+    if (useLocalStorage) {
+      setSiteSettings(next)
+      saveObjectToLocalStorage(STORAGE_KEYS.siteSettings, next)
+    } else {
+      await setDoc(
+        doc(db, "settings", "site"),
+        { ...data, updatedAt: Timestamp.now() },
+        { merge: true }
+      )
+    }
+  }
+
   const uploadImage = async (file: File, folder: string): Promise<string> => {
     if (!isCloudinaryConfigured()) {
       throw new Error("Cloudinary no configurado. Ver Configuración.")
@@ -320,6 +373,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
         pages,
         faqs,
         subscribers,
+        siteSettings,
         loading,
         useLocalStorage,
         addSubscriber,
@@ -346,6 +400,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
         updateTeamMember,
         deleteTeamMember,
         updatePage,
+        updateSiteSettings,
         addFaq,
         updateFaq,
         deleteFaq,

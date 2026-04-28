@@ -6,6 +6,8 @@ import { Hero } from "@/components/sections/Hero"
 import { HistoriaSection } from "@/components/sections/HistoriaSection"
 import { EspacioSection } from "@/components/sections/EspacioSection"
 import { EventsSection } from "@/components/sections/EventsSection"
+import { WorkshopsSection } from "@/components/sections/WorkshopsSection"
+import { GuidedToursSection } from "@/components/sections/GuidedToursSection"
 import { BookingSection } from "@/components/sections/BookingSection"
 import { ShopSection } from "@/components/sections/ShopSection"
 import { AmigoSection } from "@/components/sections/AmigoSection"
@@ -50,6 +52,8 @@ export function Home() {
         <HistoriaSection />
         <EspacioSection />
         <EventsSection />
+        <WorkshopsSection />
+        <GuidedToursSection />
         <BookingSection />
         <ShopSection />
         <AmigoSection />

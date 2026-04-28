@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/navigation-menu"
 import { cn } from "@/lib/utils"
 import { useCart } from "@/contexts/CartContext"
+import { useData } from "@/contexts/DataContext"
 import { CartSheet } from "@/components/CartSheet"
 
 const menuItems = {
@@ -51,6 +52,8 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [openMobileMenu, setOpenMobileMenu] = useState<string | null>(null)
   const { itemCount, cartOpen, setCartOpen } = useCart()
+  const { siteSettings } = useData()
+  const logoUrl = siteSettings?.logoUrl
 
   const toggleMobileSubmenu = (key: string) => {
     setOpenMobileMenu(openMobileMenu === key ? null : key)
@@ -62,9 +65,17 @@ export function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-              <span className="text-primary-foreground font-serif font-medium text-lg">CR</span>
-            </div>
+            {logoUrl ? (
+              <img
+                src={logoUrl}
+                alt="Casa Ramayon"
+                className="h-10 w-10 object-contain rounded-full"
+              />
+            ) : (
+              <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                <span className="text-primary-foreground font-serif font-medium text-lg">CR</span>
+              </div>
+            )}
             <span className="text-xl lg:text-2xl font-serif italic tracking-wide text-foreground">
               Casa Ramayon
             </span>
@@ -223,4 +234,3 @@ export function Header() {
     </header>
   )
 }
-

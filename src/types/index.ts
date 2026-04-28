@@ -139,6 +139,13 @@ export interface Faq {
   updatedAt: Date
 }
 
+// Site-wide settings (logo, brand assets, etc.)
+export interface SiteSettings {
+  logoUrl?: string
+  heroBackgroundUrl?: string
+  updatedAt?: Date
+}
+
 // Ticket (Entrada) types
 export interface Entrada {
   id: string
