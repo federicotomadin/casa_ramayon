@@ -28,8 +28,8 @@ export function WorkshopsSection() {
     <section id="talleres" className="py-24">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-4">
-            Talleres y <span className="italic">Formación</span>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+            Talleres y <span className="font-sans font-bold italic">Formación</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Cursos y workshops para desarrollar tu creatividad
@@ -52,7 +52,7 @@ export function WorkshopsSection() {
                 </div>
               </div>
               <CardContent className="p-6">
-                <h3 className="text-xl font-medium mb-2">{workshop.title}</h3>
+                <h3 className="text-xl font-sans font-bold mb-2">{workshop.title}</h3>
                 <p className="text-sm text-muted-foreground mb-4">
                   por {workshop.instructor}
                 </p>

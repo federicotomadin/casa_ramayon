@@ -21,13 +21,13 @@ export const Hero = () => {
 
       {/* Content */}
       <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center">
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tight mb-6 text-balance">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 text-balance">
          Arte con Historia
           <br />
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-          Descubre eventos culturales, reserva tu mesa y explora materiales de arte
-          seleccionados para tu viaje creativo.
+          Un refugio cultural en la ciudad de Reconquista.
+          Te invitamos a nuestra casa, donde la historia se mueve y el arte nos encuentra.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-base">

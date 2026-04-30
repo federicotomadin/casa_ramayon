@@ -50,9 +50,9 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 bg-primary-foreground text-primary rounded-full flex items-center justify-center">
-                <span className="font-serif font-medium text-lg">CR</span>
+                <span className="font-serif font-bold text-lg">CR</span>
               </div>
-              <span className="text-2xl font-serif italic tracking-wide">Casa Ramayon</span>
+              <span className="text-2xl font-serif tracking-wide">Casa Ramayon</span>
             </div>
             <p className="text-primary-foreground/80 leading-relaxed">
               Celebrando el arte, la cultura y la creatividad a través de experiencias inmersivas y materiales de

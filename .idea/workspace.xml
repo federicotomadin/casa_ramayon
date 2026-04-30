@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8fab57c7-5382-4387-bd17-469c1f2254ce" name="Changes" comment="add: disable Jekyll processing with .nojekyll file for GitHub Pages">
+    <list default="true" id="8fab57c7-5382-4387-bd17-469c1f2254ce" name="Changes" comment="add: extend Firestore rules to include settings documents">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firestore.rules" beforeDir="false" afterPath="$PROJECT_DIR$/firestore.rules" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/Hero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Hero.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +133,8 @@
       <workItem from="1772647443139" duration="36000" />
       <workItem from="1777340809030" duration="2124000" />
       <workItem from="1777400186816" duration="603000" />
-      <workItem from="1777429889874" duration="787000" />
+      <workItem from="1777429889874" duration="1354000" />
+      <workItem from="1777544512960" duration="639000" />
     </task>
     <task id="LOCAL-00001" summary="initialize project structure with essential components and configurations">
       <option name="closed" value="true" />
@@ -207,7 +208,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777342339935</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="add: extend Firestore rules to include settings documents">
+      <option name="closed" value="true" />
+      <created>1777431268995</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1777431268995</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,7 +231,8 @@
     <MESSAGE value="refactor: replace GitHub Pages SPA redirect script with session-based handling&#10;&#10;- Removed outdated SPA redirect script from `index.html` and `404.html`.  &#10;- Implemented session-based redirect handler in `App.tsx` using `useNavigate`.  &#10;- Updated Firestore rules to include new `/entradas` and `/usuarios` collections.  &#10;- Minor cleanup in asset references and `.idea` configurations." />
     <MESSAGE value="add: guided tours and workshops sections, site-wide settings integration&#10;&#10;- Added **GuidedToursSection** and **WorkshopsSection** components, including interactive features like modal details.&#10;- Integrated a **site-wide settings system** (`SiteSettings`) for managing logo and hero background.&#10;- Updated `Hero` and `Header` components to utilize `siteSettings` for dynamic branding.&#10;- Enhanced admin settings with image upload (logo and hero background) and management functionalities.&#10;- Extended `DataContext` with settings-related methods and local storage fallback.&#10;- Adjusted Firestore setup to include a `siteSettings` document for broader configurability." />
     <MESSAGE value="add: disable Jekyll processing with .nojekyll file for GitHub Pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: disable Jekyll processing with .nojekyll file for GitHub Pages" />
+    <MESSAGE value="add: extend Firestore rules to include settings documents" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: extend Firestore rules to include settings documents" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

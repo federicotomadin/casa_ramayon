@@ -39,8 +39,8 @@ export function ShopSection() {
     <section id="shop" className="py-24 bg-muted/30">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-4">
-            Materiales de <span className="italic">Arte</span>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+            Materiales de <span className="font-sans font-bold italic">Arte</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Materiales premium seleccionados para artistas en cada etapa de su viaje creativo
@@ -68,8 +68,8 @@ export function ShopSection() {
                   </div>
                 </div>
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-medium mb-2">{product.name}</h3>
-                  <p className="text-2xl font-light text-accent">{product.price}</p>
+                  <h3 className="text-xl font-sans font-bold mb-2">{product.name}</h3>
+                  <p className="text-2xl font-bold text-accent">{product.price}</p>
                 </CardContent>
                 <CardFooter className="p-6 pt-0 flex flex-col sm:flex-row gap-2">
                   <Button

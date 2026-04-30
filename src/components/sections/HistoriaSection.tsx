@@ -16,7 +16,7 @@ export function HistoriaSection() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-serif font-semibold mb-4">{title}</h2>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">{title}</h2>
             {subtitle && (
               <p className="text-primary font-medium text-lg mb-6 italic">{subtitle}</p>
             )}

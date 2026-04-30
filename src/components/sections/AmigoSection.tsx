@@ -20,7 +20,7 @@ export function AmigoSection() {
     <section id="amigo" className="py-24 bg-muted/30">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-serif font-semibold mb-4">Hacete Amigo</h2>
+          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">Hacete Amigo</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">{intro}</p>
           <p className="text-primary font-medium mt-2 italic">{tagline}</p>
         </div>
@@ -40,7 +40,7 @@ export function AmigoSection() {
                     Recomendado
                   </div>
                 )}
-                <h3 className="font-serif font-semibold text-xl mb-1">{m.name}</h3>
+                <h3 className="font-serif font-bold text-xl mb-1">{m.name}</h3>
                 <div className="flex items-baseline gap-1 mb-4">
                   <span className="text-2xl font-bold text-primary">{m.price}</span>
                   <span className="text-muted-foreground">/ {m.period}</span>

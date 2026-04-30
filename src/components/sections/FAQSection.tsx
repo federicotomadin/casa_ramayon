@@ -14,7 +14,7 @@ export function FAQSection() {
   return (
     <section id="faq" className="py-24 bg-muted/30">
       <div className="container mx-auto px-4 lg:px-8">
-        <h2 className="text-3xl font-serif font-semibold text-center mb-12">
+        <h2 className="text-3xl font-serif font-bold text-center mb-12">
           Preguntas Frecuentes
         </h2>
         <Accordion type="single" collapsible className="max-w-3xl mx-auto space-y-2">

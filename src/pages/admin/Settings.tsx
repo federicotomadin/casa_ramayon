@@ -128,7 +128,7 @@ export function AdminSettings() {
               </div>
             ) : (
               <div className="h-20 w-20 rounded-full bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-serif font-medium text-2xl">CR</span>
+                <span className="text-primary-foreground font-serif font-bold text-2xl">CR</span>
               </div>
             )}
 

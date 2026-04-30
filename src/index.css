@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Typography - Proposal 3: Raleway + Playfair Display (similar to Rosallind) */
+  /* Primary: Zoika Bold (self-host files in public/fonts/). Secondary: Raleway Medium/Bold. */
   --font-sans: "Raleway", "Raleway Fallback", system-ui, -apple-system, sans-serif;
-  --font-serif: "Playfair Display", "Playfair Display Fallback", Georgia, serif;
-  --font-logo: "Playfair Display", "Playfair Display Fallback", Georgia, serif;
+  --font-serif: "Zoika", "Zoika Fallback", Georgia, serif;
+  --font-logo: "Zoika", "Zoika Fallback", Georgia, serif;
 
   /* Color Palette - Proposal 3 */
   /* Principal: #be5629 (burnt orange/terracotta) */
@@ -44,7 +44,17 @@
 }
 
 @font-face {
-  font-family: "Playfair Display Fallback";
+  font-family: "Zoika";
+  src:
+    url("/fonts/Zoika-Bold.woff2") format("woff2"),
+    url("/fonts/Zoika-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Zoika Fallback";
   src: local("Georgia");
   size-adjust: 100%;
   ascent-override: 88%;
@@ -62,6 +72,7 @@ html {
 
 body {
   font-family: theme(fontFamily.sans);
+  font-weight: 500;
   background-color: theme(colors.background);
   color: theme(colors.foreground);
   font-feature-settings: "rlig" 1, "calt" 1;
@@ -74,9 +85,9 @@ h4,
 h5,
 h6 {
   font-family: theme(fontFamily.serif);
+  font-weight: 700;
 }
 
-/* Logo text styling - uses Playfair Display as Rosallind alternative */
 .font-logo {
   font-family: theme(fontFamily.logo);
 }

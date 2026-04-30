@@ -26,8 +26,8 @@ export function BookingSection() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
           <div>
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-6">
-              Reserva tu <span className="italic">mesa</span>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+              Reserva tu <span className="font-sans font-bold italic">mesa</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-8">
               Experimenta nuestro espacio cultural con asientos reservados para exposiciones, espectáculos y talleres.
@@ -69,7 +69,7 @@ export function BookingSection() {
           {/* Right Form */}
           <Card className="shadow-xl">
             <CardHeader>
-              <CardTitle className="text-2xl font-light">Hacer una Reserva</CardTitle>
+              <CardTitle className="text-2xl font-bold">Hacer una Reserva</CardTitle>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">

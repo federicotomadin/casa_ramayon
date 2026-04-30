@@ -33,8 +33,8 @@ export function EventsSection() {
     <section id="events" className="py-24 bg-muted/30">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-4">
-            Próximos <span className="italic">Eventos</span>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+            Próximos <span className="font-sans font-bold italic">Eventos</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Sumérgete en experiencias culturales seleccionadas que inspiran e iluminan
@@ -62,7 +62,7 @@ export function EventsSection() {
                   </div>
                 </div>
                 <CardContent className="p-6">
-                  <h3 className="text-2xl font-medium mb-4">{event.title}</h3>
+                  <h3 className="text-2xl font-sans font-bold mb-4">{event.title}</h3>
                   <div className="space-y-2 mb-6">
                     <div className="flex items-center gap-2 text-muted-foreground">
                       <Calendar className="h-4 w-4" />

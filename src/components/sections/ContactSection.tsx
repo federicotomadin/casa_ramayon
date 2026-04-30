@@ -34,7 +34,7 @@ export function ContactSection() {
     <section id="contacto" className="py-24 bg-muted/30">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-serif font-semibold mb-4">Contacto</h2>
+          <h2 className="text-3xl font-serif font-bold mb-4">Contacto</h2>
           <p className="text-muted-foreground">Escribinos y te respondemos a la brevedad</p>
         </div>
         <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4">

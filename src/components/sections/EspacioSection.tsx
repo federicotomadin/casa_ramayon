@@ -42,7 +42,7 @@ export function EspacioSection() {
             )}
           </div>
           <div className="order-1 lg:order-2">
-            <h2 className="text-3xl md:text-4xl font-serif font-semibold mb-4">{title}</h2>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">{title}</h2>
             {subtitle && (
               <p className="text-primary font-medium text-lg mb-6 italic">{subtitle}</p>
             )}

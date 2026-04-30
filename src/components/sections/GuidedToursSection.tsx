@@ -38,8 +38,8 @@ export function GuidedToursSection() {
     <section id="visitas" className="py-24 bg-muted/30">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-4">
-            Visitas <span className="italic">Guiadas</span>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+            Visitas <span className="font-sans font-bold italic">Guiadas</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Recorré la casa y descubrí su historia de la mano de nuestros guías
@@ -61,7 +61,7 @@ export function GuidedToursSection() {
                 />
               </div>
               <CardContent className="p-6">
-                <h3 className="text-xl font-medium mb-3">{tour.title}</h3>
+                <h3 className="text-xl font-sans font-bold mb-3">{tour.title}</h3>
                 {tour.description && (
                   <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
                     {tour.description}
